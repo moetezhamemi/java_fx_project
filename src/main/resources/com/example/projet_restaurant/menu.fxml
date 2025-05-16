@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.projet_restaurant.controllers.MenuController">
+
+    <top>
+        <HBox styleClass="header" alignment="CENTER" spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <Label text="Menu du Restaurant" styleClass="title" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Dashboard" styleClass="header-btn" prefWidth="100" />
+            <Button text="Déconnexion" styleClass="header-btn" prefWidth="100" />
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="10" styleClass="main-content">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+            <!-- Left side - Menu Items (80% width) -->
+            <VBox fx:id="menuContainer" spacing="10" styleClass="menu-container" prefWidth="800">
+                <Label text="Nos Articles" styleClass="section-title" />
+
+                <HBox spacing="5" styleClass="category-filter">
+                    <Button text="Tous" styleClass="category-btn active" prefWidth="70" />
+                    <Button text="Entrées" styleClass="category-btn" prefWidth="70" />
+                    <Button text="Plats" styleClass="category-btn" prefWidth="70" />
+                    <Button text="Desserts" styleClass="category-btn" prefWidth="70" />
+                    <Button text="Boissons" styleClass="category-btn" prefWidth="70" />
+                </HBox>
+
+                <FlowPane fx:id="articlesFlowPane" hgap="15" vgap="15" prefWrapLength="780"/>
+            </VBox>
+
+            <!-- Right side - Order Summary (20% width) -->
+            <VBox fx:id="orderSummary" spacing="10" styleClass="order-summary" prefWidth="250">
+                <Label text="Votre Commande" styleClass="section-title" />
+
+                <ListView fx:id="orderItemsList" styleClass="order-list" />
+
+                <HBox alignment="CENTER_RIGHT" spacing="5">
+                    <Label text="Total:" styleClass="total-label" />
+                    <Label fx:id="orderTotalLabel" text="0.00 DH" styleClass="total-amount" />
+                </HBox>
+
+                <Button text="Confirmer" styleClass="confirm-btn" />
+                <Button text="Vider" styleClass="clear-btn" />
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>
