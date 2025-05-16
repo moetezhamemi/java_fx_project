@@ -11,7 +11,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         try {
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/com/example/projet_restaurant/menu.fxml"));
+                    getClass().getResource("/com/example/projet_restaurant/auth.fxml"));
             Parent root = loader.load();
 
             // Chargement du CSS
